@@ -87,7 +87,11 @@ class _SplashContentState extends State<SplashContent> {
                 bottom: MediaQuery.of(context).size.height * 0.13,
                 left: MediaQuery.of(context).size.width * 0.33,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomePageScreen()),
+                  ),
                   child: Text(
                     "Get Started",
                     style: TextStyle(fontSize: 18, color: primarygreen),
