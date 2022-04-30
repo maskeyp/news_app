@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/home_screen/home.dart';
 import 'package:news_app/splash_screen/splash_home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+int? initScreen;
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  initScreen = preferences.getInt('initScreen');
+  await preferences.setInt('initScreen', 1); //if already shown -> 1 else 0
   runApp(const MyApp());
 }
 
@@ -18,7 +25,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      initialRoute: initScreen == 0 || initScreen == null ? 'onboard' : 'home',
+      routes: {
+        'home': (context) => const HomePageScreen(),
+        'onboard': (context) => const SplashScreen(),
+      },
     );
   }
 }

@@ -14,31 +14,22 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  void completed() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const HomePageScreen()),
-    );
-  }
+  // void completed() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => const HomePageScreen()),
+  //   );
+  // }
 
-  @override
-  void initState() {
-    
-    
-    super.initState();
-    Timer(const Duration(seconds: 5), completed);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Timer(const Duration(seconds: 5), completed);
+  // }
 
   @override
   Widget build(BuildContext context) {
-    // Future.delayed(Duration(seconds: 5), () {
-    //   // 5s over, navigate to a new page
-    //   Navigator.push(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => const HomePageScreen()),
-    //   );
-
-    // });
+    
     return Stack(
       children: [
         const FramePage(),

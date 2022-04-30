@@ -44,6 +44,7 @@ class _SplashContentState extends State<SplashContent> {
             onPageChanged: (value) {
               setState(() {
                 currentIndex = value;
+                
               });
             },
             itemCount: splashData.length,
