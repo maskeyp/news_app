@@ -48,12 +48,15 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 width: size.width / 1.1,
                 child: Row(
                   children: [
-                    const Icon(
-                      Icons.menu,
-                      // color: Colors.white,
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                      ),
                     ),
                     SizedBox(
-                      width: size.width / 4,
+                      width: size.width / 5,
                     ),
                     const Text(
                       "News App",
