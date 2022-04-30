@@ -4,7 +4,6 @@ import '../constants/constant.dart';
 import '../models/splash_model.dart';
 
 class SplashContent extends StatefulWidget {
-  
   const SplashContent({Key? key}) : super(key: key);
 
   @override
@@ -12,8 +11,6 @@ class SplashContent extends StatefulWidget {
 }
 
 class _SplashContentState extends State<SplashContent> {
-  
-  
   int currentIndex = 0;
   List<SplashModel> splashData = [
     SplashModel(
@@ -29,22 +26,15 @@ class _SplashContentState extends State<SplashContent> {
         "There are many variations of passages of Lorem Ipsum available. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
         "Enjoy with everyone"),
   ];
-  
 
   @override
-  
-
-
-  
   Widget build(BuildContext context) {
-   
     return Stack(
       children: [
         PageView.builder(
             onPageChanged: (value) {
               setState(() {
                 currentIndex = value;
-                
               });
             },
             itemCount: splashData.length,
@@ -73,8 +63,11 @@ class _SplashContentState extends State<SplashContent> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ElevatedButton(
-                      onPressed: () =>  Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageScreen()),
-    ),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePageScreen()),
+                      ),
                       child: Text(
                         "SKIP",
                         style: TextStyle(fontSize: 18, color: primarygreen),
@@ -87,20 +80,6 @@ class _SplashContentState extends State<SplashContent> {
                                 bottomRight: Radius.circular(20.0))),
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "NEXT",
-                        style: TextStyle(fontSize: 18, color: primarygreen),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: lightgreenshede1,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20.0),
-                                bottomLeft: Radius.circular(20.0))),
-                      ),
-                    )
                   ],
                 ),
               )
